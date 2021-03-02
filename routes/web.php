@@ -26,4 +26,7 @@ Route::get('testelivewire', function () {
     return view('testeLiveWire');
 });
 
-Route::get('tweets', ShowTweets::class);
+Route::get('tweets', ShowTweets::class)->middleware('auth');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
