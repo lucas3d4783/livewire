@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Livewire\{
+    ShowTweets
+};
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,3 +25,5 @@ Route::get('/', function () {
 Route::get('testelivewire', function () {
     return view('testeLiveWire');
 });
+
+Route::get('tweets', ShowTweets::class);
